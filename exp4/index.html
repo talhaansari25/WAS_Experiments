@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Pop-Up Boxes</title>
+    <script>
+        function displayDate() {
+            document.getElementById("dateBox").value = new Date().toLocaleDateString();
+        }
+
+        function calculateFactorial() {
+            let n = parseInt(prompt("Enter a number to calculate factorial:"));
+            let factorial = 1;
+            for (let i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+            alert("Factorial of " + n + " is " + factorial);
+        }
+
+        function generateTable() {
+            let n = parseInt(prompt("Enter a number to generate multiplication table:"));
+            let table = "Multiplication Table for " + n + "\n";
+            for (let i = 1; i <= 10; i++) {
+                table += n + " x " + i + " = " + (n * i) + "\n";
+            }
+            alert(table);
+        }
+
+        function sumNumbers() {
+            let sum = 0;
+            let n = parseInt(prompt("Enter a number:"));
+            sum += n;
+            while (confirm("Do you want to add another number?")) {
+                n = parseInt(prompt("Enter another number:"));
+                sum += n;
+            }
+            alert("The total sum is: " + sum);
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Pop-Up Boxes</h1>
+    <label for="dateBox">Click the button to display the date:</label>
+    <input type="text" id="dateBox" readonly>
+    <button onclick="displayDate()">Display Date</button>
+    <br><br>
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    <br><br>
+    <button onclick="generateTable()">Generate Multiplication Table</button>
+    <br><br>
+    <button onclick="sumNumbers()">Sum Numbers</button>
+</body>
+</html>
