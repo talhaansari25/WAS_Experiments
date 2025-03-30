@@ -1,0 +1,24 @@
+<!-- JSP Web Application with Database Connection -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+<head>
+    <title>Student Records</title>
+</head>
+<body>
+    <h2>Student Details</h2>
+    <%
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student_db", "root", "");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+            while (rs.next()) {
+                out.println("Rno: " + rs.getInt("Rno") + " - Name: " + rs.getString("Name") + " - College: " + rs.getString("College") + " - Branch: " + rs.getString("Branch") + "<br>");
+            }
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    %>
+</body>
+</html>
