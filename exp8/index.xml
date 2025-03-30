@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students SYSTEM "students.dtd">
+<students>
+    <student>
+        <Rno>101</Rno>
+        <Name>John Doe</Name>
+        <College>XYZ University</College>
+        <Branch>Computer Science</Branch>
+    </student>
+    <student>
+        <Rno>102</Rno>
+        <Name>Jane Smith</Name>
+        <College>ABC Institute</College>
+        <Branch>Electronics</Branch>
+    </student>
+</students>
